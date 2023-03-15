@@ -1,14 +1,19 @@
 {
   "name": "react-simple-color-picker-design",
-  "version": "0.0.9",
+  "version": "0.1.2",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --progress --colors",
-    "watch": "webpack --progress --colors --watch",
-    "start": "node server.js",
-    "package": "webpack --progress --colors -p"
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+    "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
+    "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
+    "test": "jest --config jestconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run prettier && npm run lint"
   },
   "repository": {
     "type": "git",
@@ -24,9 +29,40 @@
   "bugs": {
     "url": "https://github.com/IvanBF9/react-simple-color-picker/issues"
   },
-  "devDependencies": {
-    "react": ">=16.13.1",
-    "webpack": "^1.12.14"
+  "dependencies": {
+    "@types/react": "^18.0.12",
+    "react": "*",
+    "react-dom": "^18.1.0",
+    "typescript": "^4.7.3"
   },
+  "devDependencies": {
+    "@testing-library/react": "^14.0.0",
+    "@types/jest": "^29.4.2",
+    "@types/react": "^18.0.12",
+    "@typescript-eslint/eslint-plugin": "^5.55.0",
+    "@typescript-eslint/parser": "^5.55.0",
+    "add": "^2.0.6",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "jest": "^29.5.0",
+    "jest-canvas-mock": "^2.4.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "prettier": "^2.8.4",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "ts-jest": "^29.0.5",
+    "typescript": "^4.7.3"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
   "homepage": "https://github.com/IvanBF9/react-simple-color-picker#readme"
 }
