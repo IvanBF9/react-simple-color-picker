@@ -43,11 +43,11 @@ export default function Demo() {
 ### Example 1
 ```js
 <SimpleColorPicker 
-        labelOne="Label 1"
-        labelTwo="Label 2" 
-        noCustomColor={true} // Disable custom color input
-        defaultColor={color} // Base selected color
-        setColor={setColor} // Update state
+  labelOne="Label 1"
+  labelTwo="Label 2" 
+  noCustomColor={true} // Disable custom color input
+  defaultColor={color} // Base selected color
+  setColor={setColor} // Update state
 />
 ```
 ![noInput](https://github.com/IvanBF9/react-simple-color-picker/blob/main/medias/noinput.png?raw=true)
@@ -55,13 +55,43 @@ export default function Demo() {
 ### Example 2
 ```js
 <SimpleColorPicker 
-        labelOne="Label 1"
-        labelTwo="Label 2" 
-        inputClasses="bg-info" // Custom class for input
-        boxClasses="bg-error" // Custom class for popUp box
-        noCustomColor={false} // Disable custom color input
-        defaultColor={color} // Base selected color
-        setColor={setColor} // Update state
+  labelOne="Label 1"
+  labelTwo="Label 2" 
+  inputClasses="bg-info" // Custom class for input
+  boxClasses="bg-error" // Custom class for popUp box
+  noCustomColor={false} // Disable custom color input
+  defaultColor={color} // Base selected color
+  setColor={setColor} // Update state
 />
 ```
 ![noInput](https://github.com/IvanBF9/react-simple-color-picker/blob/main/medias/customclasses.png?raw=true)
+
+### Example 3
+```js
+<SimpleColorPicker
+  labelOne="Yayy"
+  colorList={[
+    "red",
+    "green",
+    "blue",
+    "yelow",
+    "#9adedb",
+    "#aa9499",
+    "#aaf0d1",
+    "#b2fba5",
+    "#b39eb5",
+    "#bdb0d0",
+    "#bee7a5",
+    "#befd73",
+    "#c1c6fc",
+    "#c6a4a4",
+    "#ff9899",
+    "#ffb7ce",
+    "#ca9bf7",
+  ]}
+  labelTwo="Custom List !"
+  defaultColor="#aaf0d1" // Base selected color
+  setColor={setColor} // Update state
+/>
+```
+![noInput](https://github.com/IvanBF9/react-simple-color-picker/blob/main/medias/customlist.png?raw=true)
