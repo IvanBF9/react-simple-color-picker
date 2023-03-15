@@ -1,0 +1,32 @@
+{
+  "name": "react-simple-color-picker-design",
+  "version": "0.0.9",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --progress --colors",
+    "watch": "webpack --progress --colors --watch",
+    "start": "node server.js",
+    "package": "webpack --progress --colors -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IvanBF9/react-simple-color-picker.git"
+  },
+  "keywords": [
+    "react",
+    "color",
+    "picker"
+  ],
+  "author": "IvanBF9",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IvanBF9/react-simple-color-picker/issues"
+  },
+  "devDependencies": {
+    "react": ">=16.13.1",
+    "webpack": "^1.12.14"
+  },
+  "homepage": "https://github.com/IvanBF9/react-simple-color-picker#readme"
+}
