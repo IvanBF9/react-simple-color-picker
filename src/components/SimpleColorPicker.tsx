@@ -39,7 +39,9 @@ export default function SimpleColorPicker({
   )
 
   useEffect(() => {
-    setColor(selectedColor)
+    if (setColor != undefined) {
+      setColor(selectedColor)
+    }
   }, [selectedColor])
 
   const useOutsideClick = (callback: { (): void; (): void }) => {
