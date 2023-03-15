@@ -1,10 +1,12 @@
 import * as React from 'react'
-import { useEffect, useRef, useState } from 'react'
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react'
 
 export default function SimpleColorPicker({
   colorList,
   defaultColor,
+  setColor,
 }: {
+  setColor?: Dispatch<SetStateAction<string>>
   colorList?: [string]
   defaultColor?: string
 }) {
@@ -35,6 +37,10 @@ export default function SimpleColorPicker({
       '#ca9bf7',
     ],
   )
+
+  useEffect(() => {
+    setColor(selectedColor)
+  }, [selectedColor])
 
   const useOutsideClick = (callback: { (): void; (): void }) => {
     const ref = useRef(null)
@@ -76,7 +82,7 @@ export default function SimpleColorPicker({
       </button>
       {pickerOpen && (
         <div className='absolute z-50 rounded-box w-full max-w-xs flex flex-col items-center h-32 shadow-md bg-base-100 overflow-hidden p-2'>
-          <div className='flex flex-wrap overflow-y-auto'>
+          <div className='flex flex-wrap overflow-y-auto scrollbar'>
             {colorsList.map((color) => (
               <button
                 className={condClass(
@@ -99,7 +105,6 @@ export default function SimpleColorPicker({
               className='w-full h-full border-none absolute z-20'
               id='color-picker'
               type='color'
-              key={selectedColor}
               defaultValue={selectedColor}
               onChange={({ target }) => setSelectedColor(target.value)}
             ></input>
