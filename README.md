@@ -16,6 +16,7 @@ npm i react-simple-color-picker-design
 
 ## Simple usage
 ### Styles !
+If the picker does not look like what is on the documentation, it is likely that there is a CSS conflict with the picker.
 ```js
 // Base styles of picker
 import 'react-simple-color-picker-design/styles/base.css'
@@ -26,12 +27,13 @@ import 'react-simple-color-picker-design/styles/light.css'
 import 'react-simple-color-picker-design/styles/dark.css'
 ```
 ###
+Component usage !
 ```js
 import { useEffect, useState } from "react";
 import SimpleColorPicker from "react-simple-color-picker-design";
 
 export default function Demo() {
-  const [color, setColor] = useState("#fff");
+  const [color, setColor] = useState("#9adedb");
 
   useEffect(() => {
     console.log("🚀 value changed ! :", color);
@@ -74,7 +76,7 @@ export default function Demo() {
     "red",
     "green",
     "blue",
-    "yelow",
+    "white",
     "#9adedb",
     "#aa9499",
     "#aaf0d1",
