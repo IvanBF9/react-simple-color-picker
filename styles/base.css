@@ -8,3 +8,13 @@
   background-color: #a39898;
   border-radius: 20px;
 }
+.scrollbar button {
+  padding: 0;
+}
+.color-picker-ct label{
+  cursor: pointer;
+}
+
+.color-picker-ct input {
+  display: block;
+}
