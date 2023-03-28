@@ -4,9 +4,9 @@ React Simple Color Picker is a **lightweight** picker compatible with **Tailwind
 If used with daisyUI, the picker will automatically adapt to the themes.
 
 ### Light
-![color-picker](https://github.com/IvanBF9/react-simple-color-picker/blob/main/medias/light.gif?raw=true)
+![color-picker](https://github.com/IvanBF9/react-simple-color-picker/blob/main/medias/lightNativeFalse.gif?raw=true)
 
-### Dark
+### Dark with nativePicker option true
 ![color-picker-dark-theme](https://github.com/IvanBF9/react-simple-color-picker/blob/main/medias/dark.gif?raw=true)
 
 ## Install
@@ -48,6 +48,7 @@ export default function Demo() {
   labelOne="Label 1"
   labelTwo="Label 2" 
   noCustomColor={true} // Disable custom color input
+  nativePicker={true} // Swith to native html color picker
   defaultColor={color} // Base selected color
   setColor={setColor} // Update state
 />
@@ -62,6 +63,7 @@ export default function Demo() {
   inputClasses="bg-info" // Custom class for input
   boxClasses="bg-error" // Custom class for popUp box
   noCustomColor={false} // Disable custom color input
+  nativePicker={true} // Swith to native html color picker
   defaultColor={color} // Base selected color
   setColor={setColor} // Update state
 />
@@ -91,6 +93,7 @@ export default function Demo() {
     "#ffb7ce",
     "#ca9bf7",
   ]}
+  nativePicker={false} // Swith to native html color picker
   labelTwo="Custom List !"
   defaultColor="#aaf0d1" // Base selected color
   setColor={setColor} // Update state
