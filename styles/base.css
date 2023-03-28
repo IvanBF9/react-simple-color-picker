@@ -11,10 +11,14 @@
 .scrollbar button {
   padding: 0;
 }
-.color-picker-ct label{
+.color-picker-ct label {
   cursor: pointer;
 }
 
 .color-picker-ct input {
   display: block;
+}
+
+.color-picker-ct canvas:hover {
+  cursor: crosshair;
 }
