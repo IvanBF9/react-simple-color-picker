@@ -26,6 +26,7 @@ export default function SimpleColorPicker({
   const [selectedColor, setSelectedColor] = useState(defaultColor || '#77dd77')
   const [pickerOpen, setPickerOpen] = useState(false)
   const [refreshKey, setRefreshKey] = useState(1)
+  const [rgbSave, setRgbSave] = useState('rgba(255,0,0,1)')
   const [colorsList] = useState(
     colorList || [
       '#77dd77',
@@ -112,7 +113,8 @@ export default function SimpleColorPicker({
       let x = 0
       let y = 0
       let drag = false
-      let rgbaColor = 'rgba(255,0,0,1)'
+      //
+      let rgbaColor = rgbSave;
       if (ctx1 != null && ctx2 != null) {
         ctx1.rect(0, 0, width1, height1)
 
@@ -133,6 +135,7 @@ export default function SimpleColorPicker({
           y = e.offsetY
           const imageData = ctx2.getImageData(x, y, 1, 1).data
           rgbaColor = 'rgba(' + imageData[0] + ',' + imageData[1] + ',' + imageData[2] + ',1)'
+          setRgbSave(rgbaColor)
           fillGradient()
         }
 
@@ -175,7 +178,7 @@ export default function SimpleColorPicker({
           y = e.offsetY
           const imageData = ctx1.getImageData(x, y, 1, 1).data
           rgbaColor = 'rgba(' + imageData[0] + ',' + imageData[1] + ',' + imageData[2] + ',1)'
-
+          setRgbSave(rgbaColor)
           setSelectedColor(getColorFun(imageData[0], imageData[1], imageData[2]))
         }
 
