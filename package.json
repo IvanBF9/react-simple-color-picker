@@ -1,6 +1,6 @@
 {
   "name": "react-simple-color-picker-design",
-  "version": "1.1.1",
+  "version": "1.1.11",
   "description": "",
   "main": "./dist/cjs/index.js",
   "module": "./dist/index.js",
